@@ -1,0 +1,299 @@
+<!-- 
+ <style>
+  body {
+   font-family: Arial, Helvetica, sans-serif;
+     user-select: none;
+     position: relative;
+     overflow: hidden;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ 
+ /* Add padding to containers */
+ .first {
+   padding: 19px;
+   position: relative;
+   left: 2%;
+   width: 100%;
+ }
+ /* Full-width input fields */
+ input[type=text], input[type=password] {
+   width: 65%;
+   padding: 15px;
+   position: relative;
+   left: 20%;
+   align-content: center;
+   margin: 5px 0 22px 0;
+   display: inline-block;
+   border: none;
+   background: #f1f1f1;
+ }
+ .font{
+   font-size: 0.5cm;
+   color:black;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: bold;
+ 
+ }
+ .second{
+   border-radius: 20px;
+   background: whitesmoke;
+   width: 60%;
+   position: relative;
+   left: 20%;
+   border-style: solid;
+  border-color: black;
+ }
+ 
+ input[type=text]:focus, input[type=password]:focus 
+ {
+   background-color: #ddd;
+   outline: none;
+ }
+ 
+ 
+ /* Overwrite default styles of hr */
+ hr {
+   border: 1px solid #f1f1f1;
+   margin-bottom: 25px;
+ }
+ 
+ /* Set a style for the submit button */
+ .registerbtn {
+   background-color: #4CAF50;
+   color: white;
+   padding: 16px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   position: relative;
+   width: 10%;
+   opacity: 0.9;
+ }
+ .rightside{
+ position: relative;
+ left: 20%;
+ width: 50%;
+ background: none;
+ }
+ 
+ h1{
+   background: none;
+   font-size: 39pt;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+ }
+ h2{
+   position: relative;
+   font-style: italic;
+   text-align: center;
+   background: none;
+ }
+ label{
+   width: 100%;
+   background: none;
+ }
+ label b{
+   position: relative;
+   left: 20%;
+   width: 180%;
+   color: black;
+   background: none;
+ }
+ .rbtn{
+   position: relative;
+   left: 25%;
+   letter-spacing: 5pt;
+   white-space: normal;
+ }
+ .table{
+   border-collapse: collapse;
+   position: relative;
+   left: 20%;
+   width: 70%;
+   border-spacing: 5px;
+ 
+ }
+ td,th{
+   border: 1px solid #dddddd;
+   text-align: center;
+   padding: 4px;
+ 
+ 
+ }
+ table input{
+   position: relative;
+   width:100%;
+   align-content: center;
+ }
+ .ibtn{
+   position: relative;
+   left: 20%;
+ }
+ .registerbtn:hover {
+   opacity: 1;
+ }
+ 
+ /* Add a blue text color to links */
+ a {
+   color: dodgerblue;
+ }
+ 
+ /* Set a grey background color and center the text of the "sign in" section */
+ .signin {
+   background-color: #f1f1f1;
+   text-align: center;
+ }
+ </style> -->
+
+<div class="container-fluid"  style="font-family: 'Quando';">
+
+ <div class="row jumbotron">
+   <div class="col-md-1"></div>
+   <div class="col-md-10" style="margin-top:5%;margin-bottom:5%;"> 
+     <h1 align="center" style="font-size: 250%;font-family: 'Julius Sans One';color: #660000;"><strong>ANJALAI AMMAL - MAHALINGAM ENGINEERING COLLEGE</strong></h1><br>
+       <h3 align="center" style="margin-top:2%;font-family: 'Merienda One';color: #000033;">STUDENT REGISTRATION FORM</h3>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+ 
+<div class="row">
+ <div class="col-md-1"></div>
+ <div class="col-md-10" style="margin-top:3%;">
+ <form>
+   <div class="form-group" text-align="center" >
+      <div class="row">
+       <div class="col-md-3"></div>
+       <div class="col-md-6" style="margin-left:3%;margin-right:3%;">
+         <input type="text" placeholder="Enter First Name" class="form-control" [(ngModel)]="user.Fname" name="Fname" required>
+         <input type="text" placeholder="Enter Last Name" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Lname" name="Lname" required><br> 
+         
+         <label for="Date Of Birth" style="color: #001a66;"><b>Date Of Birth:</b></label>&nbsp;&nbsp;&nbsp;<br>
+         <input class="rightside" type="date"  class="form-control" [(ngModel)]="user.DOB" name="Date Of Birth" required><br>
+         
+         <label for="age" style="color: #001a66;"><b>Age as on 1st July 2019:</b></label>&nbsp;&nbsp;&nbsp;<br>
+         <div class="ibtn">
+          <input type="month" name="age" class="form-control" [(ngModel)]="user.age" value="age"> Years/Month<br>
+         </div><br>
+       
+         <label for="Gender" style="color: #001a66;"><b>GENDER:</b></label>&nbsp;&nbsp;&nbsp;
+         <div class="rbtn">
+          <input type="radio" name="Gender" [(ngModel)]="user.male" value="male"  required> Male &nbsp;                                           
+          <input type="radio" name="Gender" [(ngModel)]="user.male" value="female"> Female<br>                                           
+         </div><br>
+     
+         <input type="text" placeholder="Nationality" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Nationality" name="Nationality" required>                                
+         <input type="text" placeholder="Religion" style="margin-top:1%;" class="form-control" [(ngModel)]="user.religion" name="religion" required><br>
+   
+         <label for="parent's Detail" style="color: #001a66;"><b>PERSONAL DETAIL:</b></label><br>
+         <input type="text" placeholder="Enter Parent/Guardian Name" class="form-control" [(ngModel)]="user.Family_name" name="Family Name" required>
+         <input type="text" placeholder="Enter Parent/Guardian Occupation" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Family_occup" name="Family Occupation" required>
+         <input type="text" placeholder="Enter Annual Income" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Family_income" name="Family income" required>
+
+         <input type="text" placeholder="Residential Address" style="margin-top:2%;" class="form-control" [(ngModel)]="user.Res_addr" name="Residential Address" required>
+         <input type="text" placeholder="Premanent Address" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Premanent_addr" name="Premanent Address" required>       
+      
+         <input type="text" placeholder="Mobile Number" style="margin-top:2%;" class="form-control" [(ngModel)]="user.Mobile_Number" name="Mobile Number" required>    
+         <input class="rightside"  type="text" placeholder="Enter Your Email" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Email" name="Email" required>
+         <input type="text" placeholder="Community" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Community" name="Community" required>
+         <input type="text" placeholder="Caste" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Caste" name="Caste" required><br>
+       
+         <label for="degree_type" style="color: #001a66;"><b>PROGRAMME APPLYING FOR:</b></label>&nbsp;&nbsp;&nbsp;<br>
+         <div class="rbtn">
+          <input type="radio" name="degree_type" [(ngModel)]="user.degree_BE" value="degree_BE"  required> B.E &nbsp;
+          <input type="radio" name="degree_type" [(ngModel)]="user.degree_BTECH" value="degree_BTECH"> B.TECH
+         </div><br>
+     
+         <label for="degree_type" style="color: #001a66;"><b>CHOICE OF BRANCHES APPPLYING FOR ORDER OF PREFERENCES</b></label>&nbsp;&nbsp;&nbsp;<br>
+           <input type="text" placeholder="CHOICE 1" class="form-control" [(ngModel)]="user.branch_choice1" name="branch_choice1" required>
+           <input type="text" placeholder="CHOICE 2" style="margin-top:1%;" class="form-control" [(ngModel)]="user.branch_choice2" name="branch_choice2" required>
+           <input type="text" placeholder="CHOICE 3" style="margin-top:1%;" class="form-control" [(ngModel)]="user.branch_choice3" name="branch_choice3" required>
+           <input type="text" placeholder="Qualifying Examination passed Medium of study" style="margin-top:1%;" class="form-control" [(ngModel)]="user.previous_medium" name="previous_medium" required>
+           <input type="text" placeholder="Name of the School last studied" style="margin-top:1%;" class="form-control" [(ngModel)]="user.previous_school" name="previous_school" required><br>
+           
+           <label for="previous_passing" style="color: #001a66;"><b>Month and year of Passing:</b></label><br>
+           <div class="ibtn">
+            <input type="month" name="previous_passing"class="form-control"  [(ngModel)]="user.previous_passing" value="previous_passing">
+           </div><br>
+       
+         <label for="Gender" style="color: #001a66;"><b>NAME OF BOARD:</b></label>&nbsp;&nbsp;&nbsp;
+         <div class="rbtn">
+          <input type="radio" name="board" [(ngModel)]="user.board_state" value="board_state"  required> STATE BOARD &nbsp;
+          <input type="radio" name="board" [(ngModel)]="user.board_cbse" value="board_cbse"> CBSE &nbsp;
+          <input type="radio" name="board" [(ngModel)]="user.board_other" value="board_other"> OTHERS
+         </div><br>
+     
+         <input type="text" placeholder="REGISTRATION No of previous Appearence"class="form-control" [(ngModel)]="user.previous_regno" name="previous_regno" required><br>
+       </div>
+       <div class="col-md-3"></div>
+      </div><br>
+
+         <div style="margin-left: 3%;margin-right: 3%;">
+           <label for="parent's Detail" style="color: #001a66;"><b>HSC DETAIL:</b></label><br>
+           <table class="table" style="margin-top: 1%;">
+             <tr>
+               <th>SUBJECT</th>
+               <th>MARKS SCORED</th>
+               <th>MAX MARKS</th>
+             </tr>
+             <tr style="margin-top: 1%;">
+               <td> <input class="table" type="text" placeholder="Language"class="form-control" [(ngModel)]="user.hsc_language" name="hsc_language" required></td>
+               <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_language_marks" name="hsc_language_marks" required></td>
+               <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_language_maxmark" name="hsc_language_maxmark" required></td>
+             </tr>
+             <tr>
+                 <td> English</td>
+                 <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_english_marks" name="hsc_english_marks" required><br></td>
+                 <td> <input type="text"class="form-control"  [(ngModel)]="user.hsc_english_maxmark" name="hsc_english_maxmark" required><br></td>
+             </tr>
+             <tr>
+                   <td> Mathematics</td>
+                   <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_maths_marks" name="hsc_maths_marks" required></td>
+                   <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_maths_maxmark" name="hsc_maths_maxmark" required></td>
+             </tr>
+             <tr>
+                     <td> Physics</td>
+                     <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_physics_marks" name="hsc_physics_marks" required></td>
+                     <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_physics_maxmark" name="hsc_physics_maxmark" required></td>
+             </tr>
+             <tr>
+                       <td> Chemistry</td>
+                       <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_chemistry_marks" name="hsc_chemistry_marks" required></td>
+                       <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_chemistry_maxmark" name="hsc_chemistry_maxmark" required></td>
+             </tr>
+             <tr>
+                      <td> TOTAL</td>
+                      <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_total_marks" (click)="doSum()" name="hsc_total_marks" required></td>
+                      <td> <input type="text" class="form-control" [(ngModel)]="user.hsc_total_maxmark" (click)="doMaxsum()"  name="hsc_total_maxmark" required></td>
+             </tr>
+           </table><br><br>
+
+              <input type="text" placeholder="Aggregrate Marks(Cut-Off)" class="form-control" [(ngModel)]="user.hsc_cutoff" (click)="doCutoff()" name="hsc_cutoff" required>
+              <input type="text" placeholder="12th Percentage" style="margin-top:1%;" class="form-control" [(ngModel)]="user.hsc_percentage" (click)="doPercentage()" name="hsc_percentage" required><br>
+              
+              <label for="hostel" style="color: #001a66;"><b>DO YOU WISH TO STAY IN HOSTEL:</b></label>
+              <div class="rbtn">
+               <input type="radio" name="hostel" [(ngModel)]="user.hostel_yes" value="hostel_yes"  required> YES &nbsp;
+               <input type="radio" name="hostel" [(ngModel)]="user.hostel_no" value="hostel_no"> NO<br>
+              </div><br>
+             
+              <input type="text" placeholder="Participation in Sports,NCC & NSS" class="form-control" [(ngModel)]="user.hsc_xtra" name="hsc_xtra" required>
+              <input type="text" placeholder="Achievements in culturals activities etc" style="margin-top:1%;" class="form-control" [(ngModel)]="user.hsc_culturals" name="hsc_culturals" required><br>
+          
+            <label for="first_graduvation" style="color: #001a66;"><b>ARE YOU AN FIRST GENERATION COLLEGE STUDENT:</b></label>
+            <div class="rbtn">
+             <input type="radio" name="first_graduvation" [(ngModel)]="user.first_graduvation_yes" value="first_graduvation_yes"  required> YES &nbsp;
+             <input type="radio" name="first_graduvation" [(ngModel)]="user.first_graduvation_no" value="first_graduvation_no"> NO<br>
+           </div>
+         </div><br>
+                         
+              
+        <button class="button" style="margin-bottom:2%; background-color: #00001a;" (click)=onGetvalue()>SUBMIT</button>
+                         
+   </div>
+ </form>
+ <div class="col-md-1"></div>
+ </div>
+ </div>
+          
+</div>   
