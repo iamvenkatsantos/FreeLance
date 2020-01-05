@@ -11,6 +11,7 @@ import { FrontComponent } from './front/front.component';
 
 import { StaffComponent } from './staff/staff.component';
 import { LoginComponent } from './login/login.component';
+import { DiplomaComponent } from './diploma/diploma.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { LoginComponent } from './login/login.component';
     AdmissionComponent,
     FrontComponent,
     StaffComponent,
-    LoginComponent
+    LoginComponent,
+    DiplomaComponent
   ],
   imports: [
     BrowserModule,

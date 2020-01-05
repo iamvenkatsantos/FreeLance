@@ -1,4 +1,4 @@
-export class Userform {
+export class DiplomaForm {
   Fname: string;
   Lname: string;
   DOB: Date;
@@ -30,22 +30,6 @@ export class Userform {
   board_state: string;
   board_cbse: string;
   board_other: string;
-  hsc_language: string;
-  hsc_language_marks: Number;
-  hsc_language_maxmark: Number;
-  hsc_english_marks: Number;
-  hsc_english_maxmark: Number;
-  hsc_maths_marks: Number;
-  hsc_maths_maxmark: Number;
-  hsc_chemistry_marks: Number;
-  hsc_chemistry_maxmark: Number;
-  hsc_physics_marks: Number;
-  hsc_physics_maxmark: Number;
-  hsc_total_marks: Number;
-  hsc_total_maxmark: Number;
-  hsc_cutoff: Number;
-  hsc_percentage: Number;
-  hsc_culturals: string;
-  hsc_xtra: string;
   sslc_percentage: string;
+  diploma_percentage: string;
 }
