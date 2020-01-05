@@ -160,71 +160,94 @@
 <div class="row">
  <div class="col-md-1"></div>
  <div class="col-md-10" style="margin-top:3%;">
- <form>
+ <form #applicationForm="ngForm" (ngSubmit)="onGetvalue(applicationForm)">
    <div class="form-group" text-align="center" >
       <div class="row">
        <div class="col-md-3"></div>
        <div class="col-md-6" style="margin-left:3%;margin-right:3%;">
-         <input type="text" placeholder="Enter First Name" class="form-control" [(ngModel)]="user.Fname" name="Fname" required>
+        <div class="form-group" [class.has-error]="FnameControl.invalid && FnameControl.touched" >
+         <input required type="text" placeholder="Enter First Name" class="form-control"   maxlength="30" minlength="2" [(ngModel)]="user.Fname" name="Fname" #FnameControl="ngModel">
+          <span class="help-block" *ngIf="FnameControl.invalid && FnameControl.touched">
+            Field is Required*
+          </span>
+       </div>
+       <div class="form-group">
          <input type="text" placeholder="Enter Last Name" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Lname" name="Lname" required><br> 
-         
+        </div>
+        <div class="form-group">
          <label for="Date Of Birth" style="color: #001a66;"><b>Date Of Birth:</b></label>&nbsp;&nbsp;&nbsp;<br>
          <input class="rightside" type="date"  class="form-control" [(ngModel)]="user.DOB" name="Date Of Birth" required><br>
-         
+        </div>
+        <div class="form-group">
          <label for="age" style="color: #001a66;"><b>Age as on 1st July 2019:</b></label>&nbsp;&nbsp;&nbsp;<br>
          <div class="ibtn">
           <input type="month" name="age" class="form-control" [(ngModel)]="user.age" value="age"> Years/Month<br>
          </div><br>
-       
+        </div>
+       <div class="form-group">
          <label for="Gender" style="color: #001a66;"><b>GENDER:</b></label>&nbsp;&nbsp;&nbsp;
          <div class="rbtn">
           <input type="radio" name="Gender" [(ngModel)]="user.male" value="male"  required> Male &nbsp;                                           
           <input type="radio" name="Gender" [(ngModel)]="user.male" value="female"> Female<br>                                           
          </div><br>
-     
+        </div>
+        <div class="form-group">
          <input type="text" placeholder="Nationality" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Nationality" name="Nationality" required>                                
+        </div>
+        <div class="form-group">
          <input type="text" placeholder="Religion" style="margin-top:1%;" class="form-control" [(ngModel)]="user.religion" name="religion" required><br>
-   
+        </div>
+        <div class="form-group">
          <label for="parent's Detail" style="color: #001a66;"><b>PERSONAL DETAIL:</b></label><br>
          <input type="text" placeholder="Enter Parent/Guardian Name" class="form-control" [(ngModel)]="user.Family_name" name="Family Name" required>
          <input type="text" placeholder="Enter Parent/Guardian Occupation" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Family_occup" name="Family Occupation" required>
          <input type="text" placeholder="Enter Annual Income" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Family_income" name="Family income" required>
-
+          </div>
+          <div class="form-group">
          <input type="text" placeholder="Residential Address" style="margin-top:2%;" class="form-control" [(ngModel)]="user.Res_addr" name="Residential Address" required>
          <input type="text" placeholder="Premanent Address" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Premanent_addr" name="Premanent Address" required>       
-      
+        </div>
+        <div class="form-group">
          <input type="text" placeholder="Mobile Number" style="margin-top:2%;" class="form-control" [(ngModel)]="user.Mobile_Number" name="Mobile Number" required>    
          <input class="rightside"  type="text" placeholder="Enter Your Email" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Email" name="Email" required>
          <input type="text" placeholder="Community" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Community" name="Community" required>
          <input type="text" placeholder="Caste" style="margin-top:1%;" class="form-control" [(ngModel)]="user.Caste" name="Caste" required><br>
-       
+        </div>
+
+        <div class="form-group">
          <label for="degree_type" style="color: #001a66;"><b>PROGRAMME APPLYING FOR:</b></label>&nbsp;&nbsp;&nbsp;<br>
          <div class="rbtn">
           <input type="radio" name="degree_type" [(ngModel)]="user.degree_BE" value="degree_BE"  required> B.E &nbsp;
           <input type="radio" name="degree_type" [(ngModel)]="user.degree_BTECH" value="degree_BTECH"> B.TECH
          </div><br>
-     
+        </div>
+
+     <div class="form-group">
          <label for="degree_type" style="color: #001a66;"><b>CHOICE OF BRANCHES APPPLYING FOR ORDER OF PREFERENCES</b></label>&nbsp;&nbsp;&nbsp;<br>
            <input type="text" placeholder="CHOICE 1" class="form-control" [(ngModel)]="user.branch_choice1" name="branch_choice1" required>
            <input type="text" placeholder="CHOICE 2" style="margin-top:1%;" class="form-control" [(ngModel)]="user.branch_choice2" name="branch_choice2" required>
            <input type="text" placeholder="CHOICE 3" style="margin-top:1%;" class="form-control" [(ngModel)]="user.branch_choice3" name="branch_choice3" required>
            <input type="text" placeholder="Qualifying Examination passed Medium of study" style="margin-top:1%;" class="form-control" [(ngModel)]="user.previous_medium" name="previous_medium" required>
            <input type="text" placeholder="Name of the School last studied" style="margin-top:1%;" class="form-control" [(ngModel)]="user.previous_school" name="previous_school" required><br>
-           
+          </div>     
+          <div class="form-group">
            <label for="previous_passing" style="color: #001a66;"><b>Month and year of Passing:</b></label><br>
            <div class="ibtn">
             <input type="month" name="previous_passing"class="form-control"  [(ngModel)]="user.previous_passing" value="previous_passing">
            </div><br>
-       
+          </div>
+       <div class="form-group">
          <label for="Gender" style="color: #001a66;"><b>NAME OF BOARD:</b></label>&nbsp;&nbsp;&nbsp;
          <div class="rbtn">
           <input type="radio" name="board" [(ngModel)]="user.board_state" value="board_state"  required> STATE BOARD &nbsp;
           <input type="radio" name="board" [(ngModel)]="user.board_cbse" value="board_cbse"> CBSE &nbsp;
           <input type="radio" name="board" [(ngModel)]="user.board_other" value="board_other"> OTHERS
          </div><br>
-     
+        </div>
+        <div class="form-group">
          <input type="text" placeholder="REGISTRATION No of previous Appearence"class="form-control" [(ngModel)]="user.previous_regno" name="previous_regno" required><br>
        </div>
+      </div>
        <div class="col-md-3"></div>
       </div><br>
 
@@ -288,7 +311,7 @@
          </div><br>
                          
               
-        <button class="button" style="margin-bottom:2%; background-color: #00001a;" (click)=onGetvalue()>SUBMIT</button>
+        <button type="submit" class="btn btn-primary" [disabled]="applicationForm.invalid"  >SUBMIT</button>
                          
    </div>
  </form>
