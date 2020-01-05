@@ -7,13 +7,13 @@ import { StaffComponent } from "./staff/staff.component";
 import { LoginComponent } from "./login/login.component";
 import { DiplomaComponent } from "./diploma/diploma.component";
 const routes: Routes = [
-  { path: "", redirectTo: "front", pathMatch: "full" },
+  { path: "/", redirectTo: "front", pathMatch: "full" },
   { path: "seat", component: SeatAllocComponent },
   { path: "admin", component: AdmissionComponent },
   { path: "front", component: FrontComponent },
   { path: "staff", component: StaffComponent },
   { path: "login", component: LoginComponent },
-  { path: "diplomaform", component: LoginComponent }
+  { path: "diplomaform", component: DiplomaComponent }
 ];
 
 @NgModule({

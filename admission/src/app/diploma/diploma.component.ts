@@ -52,18 +52,20 @@ export class DiplomaComponent {
 
   onGetvalue() {
     //alert("in value");
-    this.http.post("http://52.201.242.116:3000/apinfo", this.user).subscribe(
-      data => {
-        //alert("post req sucessfull"+data);
-        /*alert(this.user.Fname+'\n'+this.user.Lname+'\n'+this.user.DOB+'\n'+this.user.male+'\n'+this.user.Family_name+'\n'+this.user.Family_occup
+    this.http
+      .post("http://52.201.242.116:3000/apinfo_diploma", this.user)
+      .subscribe(
+        data => {
+          //alert("post req sucessfull"+data);
+          /*alert(this.user.Fname+'\n'+this.user.Lname+'\n'+this.user.DOB+'\n'+this.user.male+'\n'+this.user.Family_name+'\n'+this.user.Family_occup
        +'\n'+this.user.Family_income+'\n'+'\n'+this.user.Caste+'\n'+this.user.Nationality+'\n'+this.user.hsc_total_marks+'\n'+this.user.hsc_xtra
        +'\n'+this.user.previous_school+'\n'+this.user.religion+'\n'+this.user.age);*/
-        console.log("post req sucessfull", data);
-        alert("Your data submitted successfully");
-      },
-      error => {
-        console.log("error", error);
-      }
-    );
+          console.log("post req sucessfull", data);
+          alert("Your data submitted successfully");
+        },
+        error => {
+          console.log("error", error);
+        }
+      );
   }
 }

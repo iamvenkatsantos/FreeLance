@@ -8,7 +8,6 @@ import { AdmissionComponent } from './admission/admission.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FrontComponent } from './front/front.component';
-
 import { StaffComponent } from './staff/staff.component';
 import { LoginComponent } from './login/login.component';
 import { DiplomaComponent } from './diploma/diploma.component';
